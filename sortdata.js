@@ -11,35 +11,19 @@
 //3. create another function that returns a version of data list that is sorted in a ascending order
 //4. implement a node.js script that imports the functionality of your module.
 
-
+var list = []
 //------------------------------------
-var dataList = function(){
-
-  var arrNum = [];
-  return function(num) {
-  arrNum.push(num)
-
-    return arrNum;
-  }
+var dataList =  function(num) {
+  list.push(num)
+    // return arrNum;
 }
-// var numToList = dataList()
-
-// numToList(1);
-// numToList(2);
-// numToList(3);
-// numToList(4);
-// console.log(numToList(5));
-
-// var result = numToList(2);
-
-//var arrNum = [2, 5, 6, 3, 8, 6, 7, 8, 9]
 
 var listSort = function(list) {
-
+  console.log(list)
   list.sort(function(a,b){
     return a - b;
   });
-  return list
+  return list;
 }
 
 // listSort(result);
@@ -47,6 +31,6 @@ var listSort = function(list) {
 // console.log(listSort(result));
 
 module.exports = {
-  numberToList: dataList(),
-  sortNumberList: listSort()
+  numberToList: dataList,
+  sortNumberList: function() {return listSort(list)}
 }
